@@ -7,8 +7,7 @@
     <script>
       function readTemp(){
         $.getJSON("https://api.thingspeak.com/channels/1045894/feeds/1.json?result=2?api_key=QIK7WVVT4OKP3E3U", function(data){
-          alert("The temperature is:"+data.field1);
-            
+          alert("The temperature is: "+data.field1);
         });
       }
 </script>
