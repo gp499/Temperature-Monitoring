@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <title>Live Temperature Sensor</title>
     <script>
       function readTemp(){
-        alert("Hey");
-        $.getJSON("https://api.thingspeak.com/channels/1045894/feeds/1.json?result=2?api_key=QIK7WVVT4OKP3E3U", function(result){
-            var x=Number(result.field1);
-                           alert(x);
+        $.getJSON("https://api.thingspeak.com/channels/1045894/feeds/1.json?result=2?api_key=QIK7WVVT4OKP3E3U", function(data){
+          alert("The temperature is:"+data.field1);
+            
         });
       }
 </script>
+<div align="center">
+    <button onclick="readTemp()">Show Temperature</button>
+  </div>
       </head>
   <body>
 <div align="center">
